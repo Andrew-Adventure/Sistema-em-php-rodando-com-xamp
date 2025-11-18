@@ -150,35 +150,8 @@ $status_form = $_POST['status'] ?? $tarefa['status'];
         <p>&copy; 2025 Sistema de Tarefas | Desenvolvimento Web PROVA AV</p>
     </footer>
 
-    <script>
-        document.getElementById('formEdicao').addEventListener('submit', function(event) {
-            let isValid = true;
-            
-            // 1. Validação do Título
-            const tituloInput = document.getElementById('titulo');
-            const tituloErro = document.getElementById('erroTitulo');
-            if (tituloInput.value.trim() === '') {
-                tituloErro.style.display = 'block';
-                isValid = false;
-            } else {
-                tituloErro.style.display = 'none';
-            }
-            
-            // 2. Validação da Categoria
-            const categoriaInput = document.getElementById('categoria_id');
-            const categoriaErro = document.getElementById('erroCategoria');
-            if (categoriaInput.value === '') {
-                categoriaErro.style.display = 'block';
-                isValid = false;
-            } else {
-                categoriaErro.style.display = 'none';
-            }
-
-            if (!isValid) {
-                event.preventDefault();
-                alert('Por favor, preencha todos os campos obrigatórios (Título e Categoria).');
-            }
-        });
-    </script>
+    <form id="formEdicao" method="POST" action="editar.php?id=<?= $id ?>" onsubmit="return validarFormulario(event)">
+    </form>
+    <script src="script.js"></script>
 </body>
 </html>

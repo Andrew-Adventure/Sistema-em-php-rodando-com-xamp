@@ -74,7 +74,7 @@ if (isset($_GET['acao']) && $_GET['acao'] == 'excluir' && isset($_GET['id'])) {
                         <small>Criado em: <?= date('d/m/Y H:i', strtotime($tarefa['data_criacao'])) ?></small>
                         <div class="tarefa-acoes">
                             <a href="editar.php?id=<?= $tarefa['id'] ?>" class="btn-acao editar">Editar</a>
-                            <a href="index.php?acao=excluir&id=<?= $tarefa['id'] ?>" class="btn-acao excluir" onclick="return confirmarExclusao(event)">Excluir</a>
+                            <a href="#" class="btn-acao excluir" data-id="<?= $tarefa['id'] ?>" onclick="excluirTarefa(this, event)">Excluir</a>
                         </div>
                     </article>
                 <?php endforeach; ?>
@@ -88,15 +88,6 @@ if (isset($_GET['acao']) && $_GET['acao'] == 'excluir' && isset($_GET['id'])) {
         <p>&copy; 2025 Sistema de Tarefas | Desenvolvimento Web PROVA AV</p>
     </footer>
 
-    <script>
-        function confirmarExclusao(event) {
-            // Interação Visual: Confirmação com modal nativo
-            if (!confirm("Tem certeza que deseja EXCLUIR esta tarefa? Esta ação é irreversível.")) {
-                event.preventDefault(); // Impede a navegação se o usuário cancelar
-                return false;
-            }
-            return true;
-        }
-    </script>
+    <script src="script.js"></script> 
 </body>
 </html>

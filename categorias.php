@@ -172,18 +172,8 @@ $categorias_lista = $stmt_listagem->fetchAll(PDO::FETCH_ASSOC);
         <p>&copy; 2025 Sistema de Tarefas | Desenvolvimento Web PROVA AV</p>
     </footer>
 
-    <script>
-        document.getElementById('formCategoria').addEventListener('submit', function(event) {
-            const nomeInput = document.getElementById('nome');
-            const nomeErro = document.getElementById('erroNome');
-            if (nomeInput.value.trim() === '') {
-                nomeErro.style.display = 'block';
-                event.preventDefault();
-                alert('O nome da categoria é obrigatório.');
-            } else {
-                nomeErro.style.display = 'none';
-            }
-        });
-    </script>
+    <form id="formCategoria" method="POST" action="categorias.php" onsubmit="return validarFormulario(event)">
+    </form>
+    <script src="script.js"></script>
 </body>
 </html>
