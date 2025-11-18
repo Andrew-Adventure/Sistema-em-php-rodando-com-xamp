@@ -1,0 +1,12 @@
+Tecnologias	Uso de HTML5, CSS3, JavaScript, PHP e MySQL (via PDO em conexao.php).
+Mínimo de 3 Páginas	Há 4 páginas principais interligadas: index.php (Read/Delete), cadastrar.php (Create), editar.php (Update) e categorias.php (Admin/CRUD da Tabela Auxiliar).
+Operações CRUD	Create (cadastrar.php), Read (index.php), Update (editar.php) e Delete (index.php com ação via GET).
+HTML5 (Estrutura Semântica)	Uso das tags <header>, <main>, <footer> e <section> em todas as páginas.
+CSS3 (Responsividade)	O arquivo style.css utiliza Media Queries e Flexbox/Grid para um layout que se adapta a telas menores (smartphones).
+JavaScript (Validação)	O JS nos arquivos cadastrar.php e editar.php impede o envio do formulário se campos como Título estiverem vazios.
+JavaScript (Interatividade)	Uso de alert() / confirm() para confirmação de exclusão em index.php e mensagens dinâmicas (alerta-sucesso/alerta-erro) controladas via PHP/Sessions.
+PHP (Processamento)	Cada arquivo PHP (exceto style.css e conexao.php) contém a lógica de servidor para o CRUD correspondente.
+PHP (Separação Lógica/Interface)	A lógica de conexão e manipulação de dados está separada em conexao.php e nos blocos PHP, enquanto a estrutura e estilização estão em HTML/CSS.
+Banco de Dados (Conexão)	Conexão estabelecida e reutilizada através do arquivo conexao.php.
+Banco de Dados (1 Tabela Principal + 1 Auxiliar)	A tabela principal tarefas está relacionada à tabela auxiliar categorias via chave estrangeira (categoria_id).
+Interface de Gerenciamento	A página categorias.php serve como painel administrativo para o CRUD completo da tabela auxiliar, atendendo a este requisito.

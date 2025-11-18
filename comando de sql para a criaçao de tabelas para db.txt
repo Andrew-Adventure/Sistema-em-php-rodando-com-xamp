@@ -1,0 +1,23 @@
+-- Estrutura da Tabela Auxiliar: categorias
+CREATE TABLE categorias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    cor VARCHAR(7) DEFAULT '#3498db'
+);
+
+-- Estrutura da Tabela Principal: tarefas
+CREATE TABLE tarefas (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255) NOT NULL,
+    descricao TEXT,
+    data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('Pendente', 'Concluída') NOT NULL DEFAULT 'Pendente',
+    categoria_id INT,
+    FOREIGN KEY (categoria_id) REFERENCES categorias(id) ON DELETE RESTRICT ON UPDATE CASCADE
+);
+
+-- Insere algumas categorias iniciais
+INSERT INTO categorias (nome, cor) VALUES 
+('Trabalho', '#e74c3c'), 
+('Pessoal', '#3498db'), 
+('Estudos', '#2ecc71');
